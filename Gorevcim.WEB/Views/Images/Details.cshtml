@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Update";
+}
+@model ImagesDto
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Products" asp-action="Update" method="post" class="needs-validation" novalidate>
+                <h4 class="card-title">Ürün Güncelle</h4>
+                <input type="hidden" asp-for="Id" id="ProductsIdUpdate">
+
+                <div class="mb-3 row">
+                    <label asp-for="ImagesId" class="col-md-2 col-form-label" ></label>
+                    <div class="col-md-6">
+                        <select id="ImageIdUpdate" asp-for="ImagesId" asp-items="ViewBag.images" class="form-select" disabled readonly></select>
+                        <span asp-validation-for="ImagesId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label asp-for="LogoBase64" class="col-md-2 col-form-label" for="ProductsNameSave">Adı</label>
+                    <div class="col-md-6">
+                        <input id="ProductsNameUpdate" asp-for="LogoBase64" type="text" class="form-control" disabled readonly required>
+                        <div class="invalid-feedback">Ürün Adı Boş olamaz!</div>
+                    </div>
+                </div>
+
+             
+
+              
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
